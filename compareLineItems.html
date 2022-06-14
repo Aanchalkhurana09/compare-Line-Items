@@ -1,0 +1,151 @@
+<!-- sldsValidatorIgnore -->
+<template>
+<lightning-card title="Compare the Line items">
+    <lightning-layout>
+    <lightning-layout-item size="5.6" padding="around medium">
+
+    
+        <div class="slds-p-left_large">
+                
+        <lightning-combobox 
+                    placeholder="Select a Quote/Proposal"
+                    value={value}
+                    options={options}
+                    onchange={UpdateLeftValues}>
+        </lightning-combobox>
+    
+    
+            <template if:true={cardVisible}>
+                
+            <lightning-card title="Line items">
+                <lightning-datatable label="Related Line Items List"
+                                        key-field="id"
+                                        data={dataLeft}
+                                        columns={columnsField}
+                                        min-column-width="80">
+                </lightning-datatable>
+            </lightning-card>
+
+            </template>  
+        
+        
+    </div> 
+</lightning-layout-item>
+
+
+    
+<lightning-layout-item size="5.6" padding="around medium">
+        <div class="slds-p-left_large">
+                
+        <lightning-combobox 
+                    placeholder="Select a Quote/Proposal"
+                    value={value}
+                    options={options}
+                    onchange={UpdateRightValues}>
+                
+        </lightning-combobox>
+    
+    
+            <template if:true={cardVisible}>
+                
+            <lightning-card title="Line items 2">
+                <lightning-datatable label="Related Line Items List"
+                                        key-field="id"
+                                        data={dataRight}
+                                        columns={columnsData}
+                                        min-column-width="80">
+                </lightning-datatable>
+            </lightning-card>
+
+            </template>  
+        
+        </div>  
+    
+
+</lightning-layout-item>
+</lightning-layout>
+
+<div class="slds-grid slds-gutters">
+<div class="slds-col slds-size_12-of-12">
+    <div class="slds-align_absolute-center" style="margin:1em;">
+        <lightning-button 
+        style='margin-right:20px'
+        variant="brand" 
+        label="Compare" 
+        title="Primary action" 
+        onclick={handleCompare} >  
+    </lightning-button>
+    
+
+    <lightning-button 
+    style='margin-right:20px'
+    variant="brand" 
+    label="Compare and Highlight" 
+    onclick={handleCompareHighlight} >  
+</lightning-button>
+
+    <template if:true={cardVisible}>
+    
+
+        <lightning-button
+        style='margin-right:20px'
+label= "Download Excel"
+variant="brand" 
+onclick={generateExcel}>
+</lightning-button>
+</template> 
+    
+   
+        
+<template if:true={cardVisible}>
+<lightning-button variant="brand" onclick={generateData} label="Generate PDF"></lightning-button> -->
+</template>
+    
+    </div>
+
+</div>
+</div>
+
+ <!-- <template if:true={cardVisible}>
+    <a  download="ExportToCSV.csv" href={hrefdata} onclick={exportToCSV} >
+
+        
+
+            <lightning-button
+            style='margin-right:20px'
+label= "Download Excel"
+variant="brand" >
+</lightning-button>
+
+</a>
+
+</template>   -->
+
+<!-- <div class="slds-p-top_medium">
+<div class="slds-align_absolute-center">
+<lightning-button variant="brand" 
+                    label="Compare" 
+                    title="Primary action" 
+                    onclick={handleCompare} >  
+</lightning-button>
+
+            </div>
+        </div>
+        
+            <a  download="ExportToCSV.csv" href={hrefdata} onclick={exportToCSV} >
+
+                <div class="slds-p-top_medium">
+                <div class="slds-align_absolute-center">
+
+                    <lightning-button
+    label= "Download Excel"
+    variant="brand" >
+    </lightning-button>
+</div>
+</div>
+</a>
+
+<lightning-button variant="brand" onclick={generateData} label="Generate PDF"></lightning-button> -->
+
+</lightning-card>
+</template>
